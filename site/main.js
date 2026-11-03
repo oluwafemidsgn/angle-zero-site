@@ -221,11 +221,18 @@ const steps = [...timeline.querySelectorAll(".step")];
 function onScroll() {
   const vh = window.innerHeight;
 
-  // Video oval grows in and the curved text slides into place along the arc
+  // Video oval grows in as it enters
   const sr = stage.getBoundingClientRect();
   const p = reduceMotion ? 1 : clamp((vh - sr.top) / (vh * 0.5));
   videoOval.style.setProperty("--p", p.toFixed(3));
-  arcTextPath.setAttribute("startOffset", `${50 + (1 - p) * 60}%`);
+
+  // Curved text travels in from the right along the arc: fully hidden past
+  // the arc's end when the section enters, complete when the oval reaches
+  // the middle of the screen.
+  const or = videoOval.getBoundingClientRect();
+  const centre = or.top + or.height / 2;
+  const t = reduceMotion ? 1 : clamp((vh - centre) / (vh / 2));
+  arcTextPath.setAttribute("startOffset", `${50 + (1 - t) * 100}%`);
 
   // Timeline fill follows the reading line at 60% of the viewport
   const tr = timeline.getBoundingClientRect();
