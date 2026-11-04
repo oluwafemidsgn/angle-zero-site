@@ -41,24 +41,38 @@ function split(el, byChar) {
 /* ---------- Scroll reveals ---------- */
 
 const UNITS = [
+  // Home
   ".hero__copy > :not(.hero__title)",
   ".stat", ".numbers__note", ".types__note",
   ".case", ".work__note",
-  ".services__intro > :not(h2)", ".tile",
+  ".services__intro > :not(h2)", ".core", ".index__item", ".services__more",
   ".process__head > :not(h2)",
   ".measure > .label",
   ".section-head > :not(h2)", ".facts li",
   ".brands__intro > :not(h2)", ".brand-oval",
+  ".quote-feature", ".quote-small",
   ".leadership__photo", ".leadership__text > :not(h3)",
+  // Inner pages
+  ".page-hero > :not(h1):not(.page-hero__row)", ".page-hero__note",
+  ".svc-ovals .oval", ".feature-card",
+  ".sec-head__main > :not(h2)", ".sec-head__note",
+  ".core-band__intro > :not(h2)", ".included li", ".specialties li",
+  ".overview__left > :not(h2)", ".overview__right > *",
+  ".founder > .oval", ".founder__text > :not(h2)", ".crew > .oval", ".crew__text > :not(h2):not(ol)",
+  ".gallery .oval", ".pull", ".next", ".events-note",
+  ".brief", ".side-panel", ".faq__item",
+  ".rule",
+  // Shared
   ".cta > :not(h2)",
   ".footer__mark", ".footer__wordmark",
 ];
+const ZOOM = ".brand-oval, .leadership__photo, .footer__mark, .svc-ovals .oval, .founder > .oval, .crew > .oval, .gallery .oval";
 
 const units = [];
 UNITS.forEach((selector) => {
   document.querySelectorAll(selector).forEach((el) => {
     if (el.closest("[data-reveal]")) return;
-    el.dataset.reveal = el.matches(".brand-oval, .leadership__photo, .footer__mark") ? "zoom" : "";
+    el.dataset.reveal = el.matches(ZOOM) ? "zoom" : "";
     units.push(el);
   });
 });
@@ -69,7 +83,7 @@ units.forEach((el) => {
   el.style.setProperty("--d", `${Math.min(siblings.indexOf(el), 6) * 0.09}s`);
 });
 
-const headings = [...document.querySelectorAll(".hero__title, .h-xl, .h-lg, .h-ml, .cta__title, .leadership__title, .h-xl-name")]
+const headings = [...document.querySelectorAll(".hero__title, .h-page, .h-case, .h-96, .h-xl, .h-lg, .h-ml, .cta__title, .leadership__title, .h-xl-name")]
   .filter((el) => !el.closest("[data-reveal]"));
 headings.forEach((el) => split(el, el.classList.contains("leadership__title")));
 
@@ -131,6 +145,9 @@ if (!reduceMotion) {
 
 const hero = document.querySelector(".hero");
 const heroOvals = [...document.querySelectorAll(".hero__oval")];
+if (hero) initHero();
+
+function initHero() {
 const SLOTS = heroOvals.length;
 const SHUFFLE_EVERY = 3200;
 
@@ -166,15 +183,16 @@ if (!reduceMotion) {
   new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop())).observe(hero);
   document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
 }
+}
 
 /* ---------- Curved text fitted around the video oval ---------- */
 
 const stage = document.querySelector(".types__stage");
-const arcSvg = stage.querySelector(".types__arc");
-const arcPath = arcSvg.querySelector("path");
-const arcText = arcSvg.querySelector("text");
-const arcTextPath = arcSvg.querySelector("textPath");
-const videoOval = stage.querySelector(".types__oval");
+const arcSvg = stage?.querySelector(".types__arc");
+const arcPath = arcSvg?.querySelector("path");
+const arcText = arcSvg?.querySelector("text");
+const arcTextPath = arcSvg?.querySelector("textPath");
+const videoOval = stage?.querySelector(".types__oval");
 
 function layoutArc() {
   const s = stage.getBoundingClientRect();
@@ -210,17 +228,31 @@ function layoutArc() {
   arcText.style.fontSize = `${Math.min(fit, 64)}px`;
 }
 
-document.fonts.ready.then(layoutArc);
-new ResizeObserver(layoutArc).observe(stage);
+if (stage) {
+  document.fonts.ready.then(layoutArc);
+  new ResizeObserver(layoutArc).observe(stage);
+}
 
 /* ---------- Scroll-linked motion ---------- */
 
 const timeline = document.querySelector(".timeline");
-const steps = [...timeline.querySelectorAll(".step")];
+const steps = timeline ? [...timeline.querySelectorAll(".step")] : [];
+const growers = [...document.querySelectorAll("[data-grow]")];
 
 function onScroll() {
   const vh = window.innerHeight;
 
+  // Large images settle from slightly small to full size as they enter
+  growers.forEach((el) => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty("--p", (reduceMotion ? 1 : clamp((vh - r.top) / (vh * 0.7))).toFixed(3));
+  });
+
+  if (stage) scrollArc(vh);
+  if (timeline) scrollTimeline(vh);
+}
+
+function scrollArc(vh) {
   // Video oval grows in as it enters
   const sr = stage.getBoundingClientRect();
   const p = reduceMotion ? 1 : clamp((vh - sr.top) / (vh * 0.5));
@@ -233,7 +265,9 @@ function onScroll() {
   const centre = or.top + or.height / 2;
   const t = reduceMotion ? 1 : clamp((vh - centre) / (vh / 2));
   arcTextPath.setAttribute("startOffset", `${50 + (1 - t) * 100}%`);
+}
 
+function scrollTimeline(vh) {
   // Timeline fill follows the reading line at 60% of the viewport
   const tr = timeline.getBoundingClientRect();
   const progress = reduceMotion ? 1 : clamp((vh * 0.6 - tr.top - 33) / (tr.height - 66));
@@ -256,7 +290,9 @@ onScroll();
 /* ---------- Video: only play while on screen ---------- */
 
 const video = document.querySelector(".types__video");
-if (reduceMotion) {
+if (!video) {
+  // No video on this page
+} else if (reduceMotion) {
   video.removeAttribute("autoplay");
   video.pause();
 } else {
@@ -264,4 +300,72 @@ if (reduceMotion) {
     if (entry.isIntersecting) video.play().catch(() => {});
     else video.pause();
   }).observe(video);
+}
+
+/* ---------- Events: filter by sector ---------- */
+
+const filterButtons = [...document.querySelectorAll("[data-filter]")];
+const events = [...document.querySelectorAll("[data-events] .event")];
+
+filterButtons.forEach((button) =>
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+    events.forEach((el) => {
+      const show = filter === "all" || el.dataset.sector === filter;
+      if (reduceMotion) {
+        el.classList.toggle("is-hidden", !show);
+        return;
+      }
+      // Fade out, swap, fade back in
+      el.classList.add("is-filtering");
+      setTimeout(() => {
+        el.classList.toggle("is-hidden", !show);
+        el.classList.add("is-in");
+        requestAnimationFrame(() => el.classList.remove("is-filtering"));
+      }, 250);
+    });
+  })
+);
+
+/* ---------- Contact: FAQ accordion ---------- */
+
+document.querySelectorAll(".faq__q").forEach((button) =>
+  button.addEventListener("click", () => {
+    button.setAttribute("aria-expanded", String(button.getAttribute("aria-expanded") !== "true"));
+  })
+);
+
+/* ---------- Contact: brief form ---------- */
+
+// No form backend yet: the brief opens as a pre-filled email to Angle Zero.
+const brief = document.querySelector("#brief");
+if (brief) {
+  const status = brief.querySelector(".form-status");
+  brief.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(brief);
+    const missing = ["name", "email"].find((key) => !String(data.get(key) || "").trim());
+    if (missing || !brief.email.checkValidity()) {
+      status.textContent = missing === "name" ? "Add your name so we know who to reply to." : "Add a valid email so we can reply.";
+      brief[missing || "email"].focus();
+      return;
+    }
+    const lines = [
+      `Name: ${data.get("name")}`,
+      `Company: ${data.get("company")}`,
+      `Email: ${data.get("email")}`,
+      `Phone: ${data.get("phone")}`,
+      `Event: ${data.get("event")}`,
+      `Date: ${data.get("date")}`,
+      `Event type: ${data.get("type") || ""}`,
+      `Expected attendance: ${data.get("attendance") || ""}`,
+      `What we need: ${data.getAll("needs").join(", ")}`,
+      "",
+      String(data.get("message") || ""),
+    ];
+    const subject = `Event brief: ${data.get("event") || data.get("company") || data.get("name")}`;
+    window.location.href = `mailto:hello@anglezero.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+    status.textContent = "Your email app should open with the brief filled in.";
+  });
 }
