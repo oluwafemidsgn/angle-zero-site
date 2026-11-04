@@ -338,12 +338,16 @@ document.querySelectorAll(".faq__q").forEach((button) =>
 
 /* ---------- Contact: brief form ---------- */
 
-// No form backend yet: the brief opens as a pre-filled email to Angle Zero.
+// The brief goes to Slack through the /api/brief function. If that is not
+// available, it falls back to a pre-filled email so no brief is lost.
 const brief = document.querySelector("#brief");
 if (brief) {
   const status = brief.querySelector(".form-status");
-  brief.addEventListener("submit", (e) => {
+  const submit = brief.querySelector('button[type="submit"]');
+
+  brief.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (brief.classList.contains("is-sending")) return;
     const data = new FormData(brief);
     const missing = ["name", "email"].find((key) => !String(data.get(key) || "").trim());
     if (missing || !brief.email.checkValidity()) {
@@ -351,21 +355,46 @@ if (brief) {
       brief[missing || "email"].focus();
       return;
     }
-    const lines = [
-      `Name: ${data.get("name")}`,
-      `Company: ${data.get("company")}`,
-      `Email: ${data.get("email")}`,
-      `Phone: ${data.get("phone")}`,
-      `Event: ${data.get("event")}`,
-      `Date: ${data.get("date")}`,
-      `Event type: ${data.get("type") || ""}`,
-      `Expected attendance: ${data.get("attendance") || ""}`,
-      `What we need: ${data.getAll("needs").join(", ")}`,
-      "",
-      String(data.get("message") || ""),
-    ];
-    const subject = `Event brief: ${data.get("event") || data.get("company") || data.get("name")}`;
-    window.location.href = `mailto:hello@anglezero.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
-    status.textContent = "Your email app should open with the brief filled in.";
+
+    const payload = Object.fromEntries(data);
+    payload.needs = data.getAll("needs");
+
+    brief.classList.add("is-sending");
+    submit.textContent = "Sending…";
+    status.textContent = "";
+    try {
+      const res = await fetch("/api/brief", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(res.status);
+      brief.reset();
+      status.textContent = "Got it. We'll reply within two working days.";
+    } catch {
+      openEmail(data);
+      status.textContent = "Your email app should open with the brief filled in.";
+    } finally {
+      brief.classList.remove("is-sending");
+      submit.textContent = "Send the brief";
+    }
   });
+}
+
+function openEmail(data) {
+  const lines = [
+    `Name: ${data.get("name")}`,
+    `Company: ${data.get("company")}`,
+    `Email: ${data.get("email")}`,
+    `Phone: ${data.get("phone")}`,
+    `Event: ${data.get("event")}`,
+    `Date: ${data.get("date")}`,
+    `Event type: ${data.get("type") || ""}`,
+    `Expected attendance: ${data.get("attendance") || ""}`,
+    `What we need: ${data.getAll("needs").join(", ")}`,
+    "",
+    String(data.get("message") || ""),
+  ];
+  const subject = `Event brief: ${data.get("event") || data.get("company") || data.get("name")}`;
+  window.location.href = `mailto:hello@anglezero.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
 }
