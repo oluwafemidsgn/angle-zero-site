@@ -95,6 +95,8 @@ ul, ol { list-style: none; }
 .eyebrow, .label, .meta { text-transform: uppercase; }
 .body { font-size: 16px; color: rgb(73 19 43 / 0.7); }
 .body--lg { font-size: clamp(17px, 1.04vw, 20px); }
+/* Running text gets room to breathe; headings stay tight */
+.body, .lede, .footnote, .hero__lede, .stat__label, .sec-head__note, .page-hero__note, .faq__a p, .step__text .body { line-height: 1.5; }
 .footnote { font-size: 16px; color: rgb(73 19 43 / 0.7); text-align: center; }
 
 /* Dark sections flip the text colours */
@@ -239,7 +241,7 @@ ul, ol { list-style: none; }
 .stat { display: grid; gap: 24px; text-align: center; }
 .stat__value { font-size: var(--fs-stat); letter-spacing: -0.03em; }
 .stat__label { font-size: 16px; color: rgb(73 19 43 / 0.7); }
-.numbers__note { max-width: 962px; margin: 0 auto; }
+.numbers__note { max-width: 760px; margin: 0 auto; font-size: 14px; opacity: 0.85; }
 
 /* ---------- Event types (arc) ---------- */
 
@@ -277,7 +279,7 @@ ul, ol { list-style: none; }
 .case__oval--wide { width: 82.8%; aspect-ratio: 1510 / 745; margin: clamp(32px, 4.2vw, 80px) auto clamp(32px, 4.9vw, 94px); }
 
 .case__results { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 2.5vw, 48px); }
-.result-card { border-top: 1px solid rgb(73 19 43 / 0.2); padding-top: clamp(20px, 1.6vw, 32px); display: grid; gap: 24px; align-content: start; }
+.result-card { background: var(--card); border-radius: 24px; padding: clamp(24px, 2.5vw, 40px); display: grid; gap: 24px; align-content: start; }
 .result-card__stats { display: flex; flex-wrap: wrap; gap: 24px 40px; }
 .result-card__stats dt { font-family: var(--font-display); font-size: var(--fs-md); font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
 .result-card__stats dd { margin-top: 24px; font-size: 16px; color: rgb(73 19 43 / 0.7); }
@@ -316,8 +318,8 @@ ul, ol { list-style: none; }
   margin-top: clamp(56px, 5.2vw, 100px);
 }
 .index__item {
-  display: grid; grid-template-columns: 48px 1fr; gap: 16px;
-  padding: 28px 0 36px;
+  display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: baseline;
+  padding: 24px 0;
   border-bottom: 1px solid rgb(246 242 238 / 0.25);
 }
 .index__item:nth-child(1), .index__item:nth-child(5) { border-top: 1px solid rgb(246 242 238 / 0.25); }
@@ -325,6 +327,7 @@ ul, ol { list-style: none; }
 .index__body { display: grid; gap: 12px; }
 .index__body .body { max-width: 640px; }
 .services__more { margin-top: 48px; color: var(--bone); }
+.leadership__more { color: var(--bone); margin-top: 8px; justify-self: start; }
 
 /* ---------- Process / timeline ---------- */
 
@@ -772,6 +775,9 @@ fieldset.field .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12
    ========================================================= */
 
 @media (max-width: 699px) {
+  :root { --gutter: 24px; --section: 96px; }
+  .numbers__note { font-size: 13px; }
+  .result-card { border-radius: 20px; }
   .nav__wordmark { width: 120px; }
   .nav__mark { width: 42px; }
 
@@ -812,12 +818,13 @@ fieldset.field .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12
   .attribution { align-items: flex-start; }
   .attribution::before { margin-top: 7px; width: 24px; }
 
-  .timeline { max-width: none; }
-  .timeline::before, .timeline::after { left: 44px; }
-  .step { grid-template-columns: 88px 1fr; column-gap: 20px; min-height: 0; padding-bottom: 56px; }
+  .timeline { max-width: none; margin-top: 48px; background: var(--card); border-radius: 28px; padding: 36px 24px; }
+  .timeline::before, .timeline::after { left: 60px; top: 56px; bottom: 56px; }
+  .step { grid-template-columns: 72px minmax(0, 1fr); column-gap: 20px; min-height: 0; padding-bottom: 44px; }
   .step:last-child { padding-bottom: 0; }
-  .step__pill { grid-column: 1; width: 88px; height: 44px; font-size: 20px; }
-  .step--left .step__text, .step--right .step__text { grid-column: 2; justify-self: start; padding-top: 6px; }
+  .step__pill { grid-column: 1; width: 72px; height: 40px; font-size: 17px; }
+  .step--left .step__text, .step--right .step__text { grid-column: 2; justify-self: start; padding-top: 6px; gap: 8px; }
+  .step__text .h-md { font-size: 24px; }
 
   .brand-oval { width: 100%; }
   .brand-oval__text { gap: 12px; }
@@ -852,13 +859,19 @@ fieldset.field .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12
 }
 @media (max-width: 699px) {
   .page-hero .eyebrow { letter-spacing: 0.18em; }
+  .event .tags, .founder__text .tags, .side-panel .oval { display: none; }
+  .event-grid { row-gap: 64px; }
+  .feature-card { padding: 24px 20px 32px; border-radius: 0; }
   .svc-ovals { grid-template-columns: 1fr 1fr; }
   .svc-ovals .oval:nth-child(2) { grid-column: 1 / -1; grid-row: 1; }
   .svc { grid-template-columns: 1fr 48px; gap: 12px; padding: 28px 0; }
   .svc .meta { padding-top: 0; }
   .svc .h-ml, .svc__detail { grid-column: 1; }
   .svc .circle { grid-column: 2; grid-row: 1 / span 2; width: 48px; height: 48px; }
-  .steps { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr; row-gap: 0; }
+  .steps__item { grid-template-columns: 84px minmax(0, 1fr); column-gap: 16px; row-gap: 6px; padding: 20px 0; }
+  .steps__item .steps__pill { grid-row: 1 / span 2; min-width: 76px; height: 44px; padding: 0 14px; margin: 0; }
+  .metric__num { font-size: 64px; }
   .record__row { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; }
   .record__detail { grid-column: 1; }
   .brief__grid { grid-template-columns: 1fr; }
@@ -928,8 +941,12 @@ fieldset.field .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12
   .js .step--right .step__text { translate: 12px 0; }
 }
 @media (max-width: 699px) {
-  .timeline::after { left: 44px; }
-  .js .step--left .step__text, .js .step--right .step__text { translate: 24px 0; }
+  .timeline::after { left: 60px; }
+  .js .step--left .step__text, .js .step--right .step__text { translate: 12px 0; }
+  .js .step.is-active .step__pill { box-shadow: 0 0 0 6px rgb(236 40 130 / 0.16); scale: 1.04; }
+  .js .step__pill { background: var(--card); }
+  /* Stop the line at the last marker: cover the track below it with the panel colour */
+  .step:last-child::after { content: ""; position: absolute; z-index: 1; left: 30px; width: 12px; top: 40px; bottom: -36px; background: var(--card); }
   .js .step.is-active .step__text { translate: 0 0; }
 }
 

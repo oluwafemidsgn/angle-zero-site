@@ -101,6 +101,15 @@ if (reduceMotion) {
     { rootMargin: "0px 0px -12% 0px" }
   );
   [...units, ...headings].forEach((el) => io.observe(el));
+
+  // Items at the very end of the page (the footer logo on phones) can sit
+  // below the trigger line even when fully scrolled, so reveal the rest there.
+  const revealRest = () => {
+    if (window.innerHeight + window.scrollY < document.documentElement.scrollHeight - 4) return;
+    [...units, ...headings].forEach((el) => el.classList.add("is-in"));
+    window.removeEventListener("scroll", revealRest);
+  };
+  window.addEventListener("scroll", revealRest, { passive: true });
 }
 
 /* ---------- Count-up numbers ---------- */
