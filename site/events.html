@@ -9,42 +9,45 @@
   <link rel="icon" href="assets/brand/mark.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=TASA+Orbiter:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=TASA+Orbiter:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Nav -->
-  <header class="nav" id="top">
+  <header class="nav" data-nav>
     <a class="nav__logo" href="index.html" aria-label="Angle Zero home">
       <img class="nav__mark" src="assets/brand/mark.svg" alt="" width="54" height="53" />
       <img class="nav__wordmark" src="assets/brand/wordmark.svg" alt="Angle Zero" width="154" height="36" />
     </a>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
-      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
-      <span class="sr-only">Menu</span>
-    </button>
-    <nav class="nav__menu" id="nav-menu" aria-label="Main">
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html" aria-current="page">Events</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a class="btn btn--magenta nav__cta" href="contact.html">Market Your Event</a>
-    </nav>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html" aria-current="page">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn--ground nav__cta" href="contact.html">Market your event</a>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span></button>
   </header>
+  <div class="menu" id="menu" data-menu inert>
+    <nav class="menu__links" aria-label="Main">
+      <a class="t-h1" href="index.html">Home</a>
+      <a class="t-h1" href="services.html">Services</a>
+      <a class="t-h1" href="about.html">About</a>
+      <a class="t-h1" href="events.html" aria-current="page">Events</a>
+      <a class="t-h1" href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn--vivid" href="contact.html">Market your event</a>
+  </div>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="page-hero wrap">
-      <p class="eyebrow eyebrow--left">Events · Selected work</p>
-      <div class="page-hero__row">
-        <h1 class="h-page">Rooms we've filled.</h1>
-        <p class="page-hero__note">Each project lists what we were responsible for. Results are shown only where they are on record and cleared for publication.</p>
-      </div>
+
+    <section class="hero hero--inner" aria-labelledby="hero-title">
+      <p class="t-caption">Events · Selected work</p>
+      <h1 class="t-display" id="hero-title" data-rise>Rooms we've filled.</h1>
+      <p class="t-body-l measure" style="margin-bottom:48px">Each project lists what we were responsible for. Results are shown only where they are on record.</p>
       <div class="filters" role="group" aria-label="Filter events by sector">
         <button class="chip" type="button" data-filter="all" aria-pressed="true">All events</button>
         <button class="chip" type="button" data-filter="trade" aria-pressed="false">Trade &amp; investment</button>
@@ -54,99 +57,61 @@
       </div>
     </section>
 
-    <div class="wrap" data-events>
-      <!-- Featured -->
-      <article class="feature-card dark event" data-sector="trade">
-        <img class="oval" src="assets/img/loveworld.jpg" alt="Banking and policy leaders on a panel at the Loveworld Trade &amp; Investment Forum" />
-        <div class="feature-card__text">
-          <p class="meta accent">Featured · Client · Accra, Ghana · 2025 &amp; 2026</p>
-          <h2 class="h-lg">Loveworld Trade &amp; Investment Forum</h2>
-          <p class="body">A two-day, free-to-attend forum on enterprise, trade and investment at the University of Professional Studies, Accra. Full marketing ownership across two editions.</p>
-          <dl class="stats">
-            <div><dt data-count>1,700+</dt><dd>attendees</dd></div>
-            <div><dt data-count>2M+</dt><dd>media impressions</dd></div>
-            <div><dt data-count>20+</dt><dd>speakers</dd></div>
-            <div><dt data-count>92%</dt><dd>experience rating</dd></div>
-          </dl>
-          <div class="btn-group">
-            <a class="btn btn--magenta" href="case-study-loveworld.html">Read the case study</a>
-            <a class="btn-circle circle--bone" href="case-study-loveworld.html" aria-label="Read the Loveworld case study"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg></a>
-          </div>
+    <section class="sec work" aria-label="Events" style="padding-top:30px">
+      <article class="box box--split" data-event="trade" data-rise-box>
+        <div class="box__copy">
+          <div class="box__top"><p class="t-caption">Client · Accra, Ghana · 2025 &amp; 2026</p><h2 class="t-h2">Loveworld Trade &amp; Investment Forum</h2><p class="t-body">A two-day, free-to-attend forum on enterprise, trade and investment. Full marketing ownership across two editions.</p></div>
+          <div class="box__bottom"><dl class="panel"><div><dt class="t-h3" data-count>1,700+</dt><dd class="t-small quiet">Attendees</dd></div><div><dt class="t-h3" data-count>2M+</dt><dd class="t-small quiet">Impressions</dd></div><div><dt class="t-h3" data-count>20+</dt><dd class="t-small quiet">Speakers</dd></div><div><dt class="t-h3" data-count>92%</dt><dd class="t-small quiet">Rating</dd></div></dl><a class="btn btn--ground" href="case-study-loveworld.html">Read the case study</a></div>
+        </div>
+        <div class="ph " data-parallax><img src="assets/img/loveworld.jpg" alt="Banking and policy leaders on a panel at the Loveworld Trade &amp; Investment Forum" loading="lazy" /></div>
+      </article>
+      <article class="box box--split box--flip" id="moonshot" data-event="tech" data-rise-box>
+        <div class="ph " data-parallax><img src="assets/img/moonshot.jpg" alt="A crowd watching a keynote at Moonshot by TechCabal" loading="lazy" /></div>
+        <div class="box__copy">
+          <div class="box__top"><p class="t-caption">TechCabal · 2024, 2025, 2026</p><h2 class="t-h2">Moonshot by TechCabal</h2><p class="t-body">Pan-African technology conference in Lagos. Three consecutive editions.</p></div>
+          <dl class="panel"><div><dt class="t-h3" data-count>~$200K</dt><dd class="t-small quiet">Ticket sales, 2026</dd></div><div><dt class="t-h3" data-count>7,000+</dt><dd class="t-small quiet">Check-ins, 2026</dd></div></dl>
         </div>
       </article>
-
-      <!-- Other events -->
-      <div class="cols event-grid">
-        <article class="event col rule rule--strong" id="moonshot" data-sector="tech">
-          <img class="oval" src="assets/img/moonshot.jpg" alt="A crowd watching a keynote at Moonshot by TechCabal" />
-          <p class="meta">TechCabal · Technology · 2024, 2025, 2026</p>
-          <h2 class="h-ml">Moonshot by TechCabal</h2>
-          <p class="body">Pan-African technology conference in Lagos. Three consecutive editions.</p>
-          <ul class="tags"><li>Registration strategy</li><li>Email marketing</li><li>Campaign strategy</li><li>Media and community partnerships</li></ul>
-          <dl class="event__results">
-            <div><dt data-count>~$200K</dt><dd>in ticket sales</dd></div>
-            <div><dt data-count>7,000+</dt><dd>check-ins, two days</dd></div>
-          </dl>
-        </article>
-        <article class="event col rule rule--strong" data-sector="finance">
-          <img class="oval" src="assets/img/naira-life.jpg" alt="An audience at the Naira Life personal finance event" />
-          <p class="meta">Zikoko · Finance · 2026</p>
-          <h2 class="h-ml">Naira Life</h2>
-          <p class="body">Zikoko's personal finance event.</p>
-          <ul class="tags"><li>Registration</li><li>Email marketing</li><li>Media and community partnerships</li></ul>
-        </article>
-        <article class="event col rule rule--strong" data-sector="civic">
-          <img class="oval" src="assets/img/townhall.jpg" alt="A citizen asking a question at the Zikoko Citizen Townhall" />
-          <p class="meta">Zikoko · Civic · [Year]</p>
-          <h2 class="h-ml">Zikoko Citizen Townhall</h2>
-          <p class="body">Public town hall connecting citizens with public-interest conversations.</p>
-          <ul class="tags"><li>Marketing team lead</li><li>Registration</li><li>Communications</li></ul>
-        </article>
+      <div class="pair">
+        <article class="box box--stack" data-event="finance" data-rise-box><div class="ph " data-parallax><img src="assets/img/naira-life.jpg" alt="An audience at the Naira Life personal finance event" loading="lazy" /></div><div class="box__body"><p class="t-caption">Zikoko · 2026</p><h2 class="t-h3">Naira Life</h2><p class="t-body">Zikoko's personal finance event.</p></div></article>
+        <article class="box box--stack" data-event="civic" data-rise-box><div class="ph " data-parallax><img src="assets/img/townhall.jpg" alt="A citizen asking a question at the Zikoko Citizen Townhall" loading="lazy" /></div><div class="box__body"><p class="t-caption">Zikoko · Civic · [Year]</p><h2 class="t-h3">Zikoko Citizen Townhall</h2><p class="t-body">Public town hall connecting citizens with public-interest conversations.</p></div></article>
       </div>
-      <p class="body events-note">TechCabal and Zikoko projects were delivered within in-house teams; responsibilities listed are our principal's own.</p>
-    </div>
-
-    <!-- Brands -->
-    <section class="band band--magenta on-magenta" aria-labelledby="brands-title">
-      <div class="wrap">
-        <div class="sec-head">
-          <div class="sec-head__main">
-            <p class="label">Partners</p>
-            <h2 class="h-lg" id="brands-title">Brands we've worked with</h2>
-          </div>
-        </div>
-        <div class="cols brand-cols">
-          <div class="col rule"><p class="meta">Clients</p><ul class="names"><li>Loveworld</li><li>Element 8</li><li>TuneUp Productions</li></ul></div>
-          <div class="col rule"><p class="meta">In-house event teams</p><ul class="names"><li>TechCabal</li><li>Zikoko</li></ul></div>
-          <div class="col rule"><p class="meta">Media partners</p><ul class="names"><li>Pulse Ghana</li><li>Arise TV</li><li>Punch</li><li>BusinessDay</li></ul></div>
-        </div>
-      </div>
+      <p class="t-small quiet work__note" data-fade>Results are shown only where they are on record. TechCabal and Zikoko projects were delivered within in-house teams; responsibilities listed are our principal's own.</p>
     </section>
 
-    <!-- CTA -->
-    <section class="cta" id="contact" aria-labelledby="cta-title">
-      <p class="eyebrow eyebrow--left">Event marketing for business events · West Africa</p>
-      <h2 class="h-xl cta__title" id="cta-title">Producing a business event in the next six months?</h2>
-      <p class="body">Send us the brief. We'll come back within two working days with an audience plan and a scope.</p>
-      <div class="btn-group">
-        <a class="btn btn--magenta" href="mailto:hello@anglezero.co">[hello@anglezero.co]</a>
-        <a class="btn btn--plum" href="contact.html">Book a call</a>
-        <a class="btn-circle btn-circle--plum" href="contact.html" aria-label="Send us the brief">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
-        </a>
+    <section class="brands bg-card" aria-labelledby="brands-title">
+      <h2 class="t-caption" id="brands-title">Brands we've worked with</h2>
+      <div class="mq" data-mq="-1"><div class="mq__track"><div class="mq__set"><span class="t-h2">Loveworld</span><i class="mq__dot"></i><span class="t-h2">Element 8</span><i class="mq__dot"></i><span class="t-h2">TuneUp Productions</span><i class="mq__dot"></i></div></div></div>
+      <div class="mq" data-mq="1"><div class="mq__track"><div class="mq__set"><span class="t-h2">TechCabal</span><i class="mq__dot"></i><span class="t-h2">Zikoko</span><i class="mq__dot"></i><span class="t-h2">Pulse Ghana</span><i class="mq__dot"></i><span class="t-h2">Arise TV</span><i class="mq__dot"></i></div></div></div>
+      <div class="mq" data-mq="-1"><div class="mq__track"><div class="mq__set"><span class="t-h2">Punch</span><i class="mq__dot"></i><span class="t-h2">BusinessDay</span><i class="mq__dot"></i></div></div></div>
+    </section>
+
+    <section class="sec cta on-dark" aria-labelledby="cta-title">
+      <p class="t-caption" data-fade>Event marketing · West Africa</p>
+      <h2 class="t-h1" id="cta-title" data-rise>Producing a business event in the next six months?</h2>
+      <p class="t-body-l" data-fade>Send us the brief. We'll come back within two working days with an audience plan and a scope.</p>
+      <div class="btn-row" data-fade>
+        <a class="btn btn--vivid" href="contact.html">Send the brief</a>
+        <a class="btn btn--ghost" href="mailto:hello@anglezero.co">[hello@anglezero.co]</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer__logo" aria-hidden="true">
-      <img class="footer__mark" src="assets/brand/mark.svg" alt="" />
-      <img class="footer__wordmark" src="assets/brand/wordmark.svg" alt="" />
+  <footer class="footer on-dark">
+    <div class="footer__top">
+      <div class="footer__cols">
+        <div class="footer__col"><p class="t-caption">Explore</p><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="events.html">Events</a><a href="contact.html">Contact</a></div>
+        <div class="footer__col"><p class="t-caption">Base</p><p>Lagos, Nigeria</p><p>Working across West Africa</p></div>
+        <div class="footer__col"><p class="t-caption">Contact</p><a href="mailto:hello@anglezero.co">[hello@anglezero.co]</a><a href="mailto:hello@anglezero.co?subject=Book%20a%20call">Book a call</a></div>
+      </div>
+      <a href="#top" data-top>Back to top ↑</a>
     </div>
-    <p class="footer__bar">Angle Zero · Lagos, Nigeria · Working across West Africa · © 2026 Angle Zero</p>
+    <p class="t-small footer__bar quiet">© 2026 Angle Zero · Lagos, Nigeria · Working across West Africa</p>
   </footer>
 
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>
