@@ -3,125 +3,132 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services — Angle Zero</title>
-  <meta name="description" content="The whole event marketing workstream for business events in West Africa, from audience acquisition to post-event reporting." />
+  <title>Services · Angle Zero</title>
+  <meta name="description" content="Audience acquisition at the centre, with media buying, PR, email, event identity, onsite registration and reporting around it." />
   <meta name="theme-color" content="#F6F2EE" />
+  <meta property="og:title" content="Services · Angle Zero" />
+  <meta property="og:description" content="Audience acquisition at the centre, with media buying, PR, email, event identity, onsite registration and reporting around it." />
+  <meta property="og:image" content="assets/img/loveworld.jpg" />
   <link rel="icon" href="assets/brand/mark.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=TASA+Orbiter:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/serrif-condensed-medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <script>document.documentElement.classList.add("js")</script>
 </head>
-<body id="top">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="announce">
+    <span class="tag tag--audience">New</span>
+    <a href="contact.html">Sell out your event — A marketing guide to getting people to your events <span aria-hidden="true">↗</span></a>
+  </div>
+
   <header class="nav" data-nav>
-    <a class="nav__logo" href="index.html" aria-label="Angle Zero home">
-      <img class="nav__mark" src="assets/brand/mark.svg" alt="" width="54" height="53" />
-      <img class="nav__wordmark" src="assets/brand/wordmark.svg" alt="Angle Zero" width="154" height="36" />
-    </a>
-    <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html" aria-current="page">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a class="btn btn--ground nav__cta" href="contact.html">Market your event</a>
-    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span></button>
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html"><img src="assets/brand/wordmark.svg" alt="Angle Zero home" width="147" height="40" /></a>
+      <nav aria-label="Main"><ul class="nav__links"><li><a href="index.html">Home</a></li><li><a href="services.html" aria-current="page">Services</a></li><li><a href="about.html">About</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <a class="btn btn--primary nav__cta" href="contact.html">Market your event</a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span></button>
+    </div>
   </header>
   <div class="menu" id="menu" data-menu inert>
-    <nav class="menu__links" aria-label="Main">
-      <a class="t-h1" href="index.html">Home</a>
-      <a class="t-h1" href="services.html" aria-current="page">Services</a>
-      <a class="t-h1" href="about.html">About</a>
-      <a class="t-h1" href="events.html">Events</a>
-      <a class="t-h1" href="contact.html">Contact</a>
-    </nav>
-    <a class="btn btn--vivid" href="contact.html">Market your event</a>
+    <nav class="menu__links" aria-label="Mobile"><a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="about.html">About</a><a href="events.html">Events</a><a href="contact.html">Contact</a></nav>
+    <a class="btn btn--primary" href="contact.html">Market your event</a>
   </div>
 
   <main id="main">
 
-    <section class="hero hero--inner" aria-labelledby="hero-title">
-      <p class="t-caption">Services</p>
-      <h1 class="t-display" id="hero-title" data-rise>The whole workstream.</h1>
-      <div class="hero__intro" style="margin-bottom:48px"><p class="t-body-l measure">Audience acquisition sits at the centre of everything we do, and one accountable lead runs it from brief to report.</p><a class="btn btn--vivid" href="contact.html">Plan your next event</a></div>
-      <div class="strip"><div class="ph ph--round" data-zoom><img src="assets/img/hero-registration.jpg" alt="An attendee collecting a name badge at registration" loading="lazy" /></div><div class="ph " data-zoom><img src="assets/img/hero-hall.jpg" alt="A packed conference hall facing a speaker on stage" loading="lazy" /></div><div class="ph ph--circle" data-zoom><img src="assets/img/partners-media.jpg" alt="Camera crews covering a business event" loading="lazy" /></div><div class="ph ph--round" data-zoom><img src="assets/img/panel.jpg" alt="A panel discussion on stage" loading="lazy" /></div></div>
-    </section>
-
-    <section class="sec on-dark split" aria-labelledby="core-title" style="margin-top:var(--sec)">
-      <div class="stack"><p class="t-caption" data-fade>01 · Core</p><h2 class="t-h1" id="core-title" data-rise>Audience acquisition</h2><p class="t-body-l" data-fade>We define who the room is for, build the registration path, and recruit the delegates your sponsors and speakers expect to see.</p></div>
-      <ul class="list-block list-block--last" data-list><li class="t-h4">Audience definition</li><li class="t-h4">Registration and ticketing strategy</li><li class="t-h4">Delegate recruitment</li><li class="t-h4">LinkedIn and social campaigns</li><li class="t-h4">Community and ecosystem partnerships</li></ul>
-    </section>
-
-    <section class="sec" aria-labelledby="support-title">
-      <div class="pinned pinned--wide" data-pinned>
-        <div class="pinned__left">
-          <p class="t-caption">Supporting services</p>
-          <h2 class="t-h2" id="support-title" data-rise>Everything around the audience.</h2>
-          <p class="t-body">Take any of these on their own, or let them run together under one plan and one weekly report.</p>
-          <div class="preview" aria-hidden="true"><img src="assets/img/partners-media.jpg" alt="" data-preview="partners-media" loading="lazy" class="is-on" /><img src="assets/img/hero-speaker.jpg" alt="" data-preview="hero-speaker" loading="lazy" /><img src="assets/img/hero-networking.jpg" alt="" data-preview="hero-networking" loading="lazy" /><img src="assets/img/panel.jpg" alt="" data-preview="panel" loading="lazy" /><img src="assets/img/hero-applause.jpg" alt="" data-preview="hero-applause" loading="lazy" /><img src="assets/img/hero-registration.jpg" alt="" data-preview="hero-registration" loading="lazy" /><img src="assets/img/hero-hall.jpg" alt="" data-preview="hero-hall" loading="lazy" /></div>
+    <section class="wrap split-hero" aria-labelledby="hero-title">
+      <div class="split-hero__text" data-reveal>
+        <p class="t-caption">Services</p>
+        <h1 class="t-display-xl" id="hero-title">The whole workstream.</h1>
+        <p class="t-body-l">Audience acquisition sits at the centre of everything we do, and one accountable lead runs it from brief to report.</p>
+        <a class="btn btn--primary" href="contact.html">Plan your next event</a>
+      </div>
+      <div class="comp svc-visual" data-comp>
+        <div class="comp__stage">
+          <div class="sv-block bg-lime" data-pop></div>
+          <div class="sv-photo photo" data-pop style="--d:.1s"><img src="assets/img/hero-networking.jpg" alt="Delegates networking between sessions" width="460" height="360" decoding="async" /></div>
+          <div class="sv-note note" data-pop style="--d:.25s"><p class="t-caption">01 · Core</p><ul class="tags"><li class="tag tag--audience">Audience acquisition</li></ul><p class="t-title">One lead, brief to report.</p></div>
         </div>
-        <ol class="rows">
-          <li class="row row--plain" data-row data-img="partners-media"><div class="row__inner"><h3 class="t-h3">Media buying</h3><p class="t-body">Paid campaigns on Meta, LinkedIn, Google and publisher networks, reported weekly.</p></div></li>
-          <li class="row row--plain" data-row data-img="hero-speaker"><div class="row__inner"><h3 class="t-h3">PR and press</h3><p class="t-body">Media relations, press releases and coverage tracking across Nigerian and Ghanaian press.</p></div></li>
-          <li class="row row--plain" data-row data-img="hero-networking"><div class="row__inner"><h3 class="t-h3">Email and CRM</h3><p class="t-body">Registrant journeys, confirmations and reminders that turn sign-ups into people at the door.</p></div></li>
-          <li class="row row--plain" data-row data-img="panel"><div class="row__inner"><h3 class="t-h3">Event identity and website</h3><p class="t-body">Brand and campaign design, event websites and registration pages.</p></div></li>
-          <li class="row row--plain" data-row data-img="hero-applause"><div class="row__inner"><h3 class="t-h3">Content and social</h3><p class="t-body">Event messaging, content strategy and social media management.</p></div></li>
-          <li class="row row--plain" data-row data-img="hero-registration"><div class="row__inner"><h3 class="t-h3">Onsite registration</h3><p class="t-body">Check-in coordination, attendee data capture and live coverage.</p></div></li>
-          <li class="row row--plain" data-row data-img="hero-hall"><div class="row__inner"><h3 class="t-h3">Post-event reporting</h3><p class="t-body">Attendance and audience reports, and recommendations for the next edition.</p></div></li>
-        </ol>
       </div>
     </section>
 
-    <section class="sec bg-card ways" aria-labelledby="ways-title">
-      <h2 class="t-h1 heading-block" id="ways-title" data-rise>Pick the shape that fits the event.</h2>
-      <div class="cols3"><article class="tile" data-fade><p class="t-caption accent">01 · Full scope</p><div class="tile__copy"><h3 class="t-h3">Full marketing ownership.</h3><p class="t-body">We run the whole workstream: strategy, budget, channels, registration, onsite and reporting.</p><p class="t-caption">Best for flagship forums and first editions</p></div></article><article class="tile" data-fade><p class="t-caption">02 · Selected services</p><div class="tile__copy"><h3 class="t-h3">The parts your team needs.</h3><p class="t-body">Audience acquisition alone, or paid media, PR or email around your own team.</p><p class="t-caption">Best for in-house teams with gaps</p></div></article><article class="tile" data-fade><p class="t-caption">03 · Annual retainer</p><div class="tile__copy"><h3 class="t-h3">Every edition, one plan.</h3><p class="t-body">Annual retainers for recurring conferences, with a campaign scoped for each edition.</p><p class="t-caption">Best for recurring conferences</p></div></article></div>
-    </section>
-
-    <section class="sec on-dark" aria-labelledby="countdown-title">
-      <div class="countdown__head">
-        <div><p class="t-caption" data-fade>How we work</p><h2 class="t-h1" id="countdown-title" data-rise>A countdown, not a guess.</h2></div>
-        <p class="t-body" data-fade>Every engagement runs on fixed checkpoints counted back from event day.</p>
+    <section class="section section--flush-top" id="core" aria-labelledby="core-title">
+      <div class="wrap">
+        <div class="core bg-lime" data-reveal>
+          <div class="core__text">
+            <p class="t-caption">01 · Core</p>
+            <h2 class="t-display-l" id="core-title">Audience acquisition</h2>
+            <p class="t-body-l">We define who the room is for, build the registration path, and recruit the delegates your sponsors and speakers expect to see.</p>
+            <ul class="chips"><li>Audience definition</li><li>Registration and ticketing strategy</li><li>Delegate recruitment</li><li>LinkedIn and social campaigns</li><li>Community and ecosystem partnerships</li></ul>
+          </div>
+          <div class="photo"><img src="assets/img/hero-hall.jpg" alt="Conference hall during a keynote" width="480" height="400" loading="lazy" decoding="async" /></div>
+        </div>
       </div>
-      <ol class="steps" data-steps>
-        <li class="step"><p class="t-h2 step__num">T-90</p><h3 class="t-h5">Brief</h3><p class="t-small">Objectives, audience criteria, budget and approvals agreed in writing.</p></li>
-        <li class="step"><p class="t-h2 step__num">T-60</p><h3 class="t-h5">Launch</h3><p class="t-small">Audience map, channel plan and partners approved. Campaigns go live.</p></li>
-        <li class="step"><p class="t-h2 step__num">T-30</p><h3 class="t-h5">Forecast</h3><p class="t-small">On track, at risk or off track, with a recovery plan if needed.</p></li>
-        <li class="step"><p class="t-h2 step__num">T-7</p><h3 class="t-h5">Attendance drive</h3><p class="t-small">Confirmations, reminders and the show-up programme.</p></li>
-        <li class="step"><p class="t-h2 step__num">T-0</p><h3 class="t-h5">Event day</h3><p class="t-small">Onsite registration, data capture and live coverage.</p></li>
-        <li class="step"><p class="t-h2 step__num">T+14</p><h3 class="t-h5">Report</h3><p class="t-small">Attendance, audience quality and next-edition recommendations.</p></li>
-      </ol>
     </section>
 
-    <section class="sec cta on-dark" aria-labelledby="cta-title">
-      <p class="t-caption" data-fade>Event marketing · West Africa</p>
-      <h2 class="t-h1" id="cta-title" data-rise>Producing a business event in the next six months?</h2>
-      <p class="t-body-l" data-fade>Send us the brief. We'll come back within two working days with an audience plan and a scope.</p>
-      <div class="btn-row" data-fade>
-        <a class="btn btn--vivid" href="contact.html">Send the brief</a>
-        <a class="btn btn--ghost" href="mailto:hello@anglezero.co">[hello@anglezero.co]</a>
+    <section class="section bg-white" id="supporting" aria-labelledby="support-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal><div class="sec-head__title"><p class="t-caption">Supporting services</p><h2 class="t-display-l" id="support-title">Everything around the audience.</h2></div><p class="t-body-l measure-s">Take any of these on their own, or let them run together under one plan and one weekly report.</p></div>
+        <ul class="rows">
+          <li class="srow" data-reveal><h3 class="t-heading">Media buying</h3><p>Paid campaigns on Meta, LinkedIn, Google and publisher networks, reported weekly.</p><span class="tag tag--campaigns">Campaigns</span></li><li class="srow" data-reveal><h3 class="t-heading">PR and press</h3><p>Media relations, press releases and coverage tracking across Nigerian and Ghanaian press.</p><span class="tag tag--campaigns">Campaigns</span></li><li class="srow" data-reveal><h3 class="t-heading">Email and CRM</h3><p>Registrant journeys, confirmations and reminders that turn sign-ups into people at the door.</p><span class="tag tag--content">Content</span></li><li class="srow" data-reveal><h3 class="t-heading">Event identity and website</h3><p>Brand and campaign design, event websites and registration pages.</p><span class="tag tag--content">Content</span></li><li class="srow" data-reveal><h3 class="t-heading">Content and social</h3><p>Event messaging, content strategy and social media management.</p><span class="tag tag--content">Content</span></li><li class="srow" data-reveal><h3 class="t-heading">Onsite registration</h3><p>Check-in coordination, attendee data capture and live coverage.</p><span class="tag tag--registration">Registration</span></li><li class="srow" data-reveal><h3 class="t-heading">Post-event reporting</h3><p>Attendance and audience reports, and recommendations for the next edition.</p><span class="tag tag--registration">Registration</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="engage-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal><div class="sec-head__title"><p class="t-caption">Engagements</p><h2 class="t-display-l" id="engage-title">Pick the shape that fits the event.</h2></div></div>
+        <ul class="cards-3">
+          <li class="ccard engage" data-reveal><span class="bar bg-lilac"></span><p class="t-caption">01 · Full scope</p><h3 class="t-heading">Full marketing ownership.</h3><p class="t-body-l">We run the whole workstream: strategy, budget, channels, registration, onsite and reporting.</p><p class="t-body-s ccard__foot">Best for flagship forums and first editions</p></li>
+          <li class="ccard engage" data-reveal style="--d:.08s"><span class="bar bg-pink"></span><p class="t-caption">02 · Selected services</p><h3 class="t-heading">The parts your team needs.</h3><p class="t-body-l">Audience acquisition alone, or paid media, PR or email around your own team.</p><p class="t-body-s ccard__foot">Best for in-house teams with gaps</p></li>
+          <li class="ccard engage" data-reveal style="--d:.16s"><span class="bar bg-sun"></span><p class="t-caption">03 · Annual retainer</p><h3 class="t-heading">Every edition, one plan.</h3><p class="t-body-l">Annual retainers for recurring conferences, with a campaign scoped for each edition.</p><p class="t-body-s ccard__foot">Best for recurring conferences</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta bg-ink on-dark" aria-labelledby="cta-title">
+      <div class="cta__stamp cta__stamp--a stamp-shadow" aria-hidden="true"><div class="stamp"><img src="assets/img/ai-round.jpg" alt="" loading="lazy" decoding="async" /></div></div>
+      <div class="cta__stamp cta__stamp--b stamp-shadow" aria-hidden="true"><div class="stamp"><img src="assets/img/ai-net.jpg" alt="" loading="lazy" decoding="async" /></div></div>
+      <div class="wrap cta__inner" data-reveal>
+        <div class="cta__bars" aria-hidden="true"><span class="bg-lime"></span><span class="bg-pink"></span><span class="bg-lilac"></span><span class="bg-sun"></span></div>
+        <h2 class="t-display-xl" id="cta-title">Ready when<br class="br-d" /> your event is.</h2>
+        <p class="t-body-l">Tell us the date, the room and who should be in it.</p>
+        <div class="btn-row btn-row--center">
+          <a class="btn btn--light" href="contact.html">Start a brief</a>
+          <a class="btn btn--secondary" href="events.html">See our work</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer on-dark">
+  <footer class="footer">
     <div class="footer__top">
-      <div class="footer__cols">
-        <div class="footer__col"><p class="t-caption">Explore</p><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="events.html">Events</a><a href="contact.html">Contact</a></div>
-        <div class="footer__col"><p class="t-caption">Base</p><p>Lagos, Nigeria</p><p>Working across West Africa</p></div>
-        <div class="footer__col"><p class="t-caption">Contact</p><a href="mailto:hello@anglezero.co">[hello@anglezero.co]</a><a href="mailto:hello@anglezero.co?subject=Book%20a%20call">Book a call</a></div>
+      <div class="footer__brand">
+        <img src="assets/brand/wordmark.svg" alt="Angle Zero" width="211" height="58" loading="lazy" />
+        <p>Marketing and on-site ticketing for conferences, forums, summits and roundtables.</p>
       </div>
-      <a href="#top" data-top>Back to top ↑</a>
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="Footer">
+          <p class="t-caption">Explore</p>
+          <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="events.html">Events</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer__col">
+          <p class="t-caption">Contact</p>
+          <a href="mailto:hello@anglezero.co">[hello@anglezero.co]</a>
+          <a href="mailto:hello@anglezero.co?subject=Book%20a%20call">Book a call</a>
+        </div>
+      </div>
     </div>
-    <p class="t-small footer__bar quiet">© 2026 Angle Zero · Lagos, Nigeria · Working across West Africa</p>
+    <div class="footer__bottom t-caption">
+      <p>© 2026 Angle Zero</p>
+      <a href="#main" data-top>Back to top <span aria-hidden="true">↑</span></a>
+    </div>
   </footer>
 
-  <script src="assets/vendor/gsap.min.js" defer></script>
-  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="main.js" defer></script>
+  <script src="main.js?v=2" defer></script>
 </body>
 </html>

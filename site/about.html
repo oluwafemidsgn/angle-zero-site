@@ -3,106 +3,128 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Angle Zero</title>
-  <meta name="description" content="Angle Zero is the marketing side of business events in West Africa: one accountable lead, with a vetted network of specialists." />
+  <title>About · Angle Zero</title>
+  <meta name="description" content="One accountable lead on every engagement, with a vetted network of specialists brought in for each event." />
   <meta name="theme-color" content="#F6F2EE" />
+  <meta property="og:title" content="About · Angle Zero" />
+  <meta property="og:description" content="One accountable lead on every engagement, with a vetted network of specialists brought in for each event." />
+  <meta property="og:image" content="assets/img/loveworld.jpg" />
   <link rel="icon" href="assets/brand/mark.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=TASA+Orbiter:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/serrif-condensed-medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <script>document.documentElement.classList.add("js")</script>
 </head>
-<body id="top">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="announce">
+    <span class="tag tag--audience">New</span>
+    <a href="contact.html">Sell out your event — A marketing guide to getting people to your events <span aria-hidden="true">↗</span></a>
+  </div>
+
   <header class="nav" data-nav>
-    <a class="nav__logo" href="index.html" aria-label="Angle Zero home">
-      <img class="nav__mark" src="assets/brand/mark.svg" alt="" width="54" height="53" />
-      <img class="nav__wordmark" src="assets/brand/wordmark.svg" alt="Angle Zero" width="154" height="36" />
-    </a>
-    <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html" aria-current="page">About</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a class="btn btn--ground nav__cta" href="contact.html">Market your event</a>
-    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span></button>
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html"><img src="assets/brand/wordmark.svg" alt="Angle Zero home" width="147" height="40" /></a>
+      <nav aria-label="Main"><ul class="nav__links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <a class="btn btn--primary nav__cta" href="contact.html">Market your event</a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span></button>
+    </div>
   </header>
   <div class="menu" id="menu" data-menu inert>
-    <nav class="menu__links" aria-label="Main">
-      <a class="t-h1" href="index.html">Home</a>
-      <a class="t-h1" href="services.html">Services</a>
-      <a class="t-h1" href="about.html" aria-current="page">About</a>
-      <a class="t-h1" href="events.html">Events</a>
-      <a class="t-h1" href="contact.html">Contact</a>
-    </nav>
-    <a class="btn btn--vivid" href="contact.html">Market your event</a>
+    <nav class="menu__links" aria-label="Mobile"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html" aria-current="page">About</a><a href="events.html">Events</a><a href="contact.html">Contact</a></nav>
+    <a class="btn btn--primary" href="contact.html">Market your event</a>
   </div>
 
   <main id="main">
 
-    <section class="hero hero--inner" aria-labelledby="hero-title">
-      <p class="t-caption">About Angle Zero</p>
-      <h1 class="t-display" id="hero-title" data-rise>One accountable lead.</h1>
-      <p class="t-body-l measure" style="margin-bottom:48px">The marketing side of business events in West Africa, with one principal on every engagement and a vetted network brought in for each event.</p>
-    </section>
-
-    <section class="sec on-dark" aria-labelledby="founder-title">
-      <div class="about-founder">
-        <div class="ph " data-parallax><img src="assets/img/founder.jpg" alt="Portrait of Oluwatosin Joshua Adesegun" loading="lazy" /></div>
-        <div class="founder__copy"><p class="t-caption" data-fade>Founder &amp; Principal</p><h2 class="t-h2" id="founder-title" data-rise>Oluwatosin Joshua Adesegun</h2><p class="t-body-l" data-fade>Joshua has spent three years marketing business events for technology, finance and trade audiences in Nigeria and Ghana. His background spans performance marketing, email and brand strategy, and he holds an MBA in Marketing.</p><p class="t-body-l" data-fade>He is the accountable lead on every engagement, working with a vetted network of specialists.</p></div>
+    <section class="wrap hero hero--center" style="padding-bottom:var(--section)" aria-labelledby="hero-title">
+      <p class="t-caption" data-reveal>About Angle Zero</p>
+      <h1 class="t-display-xl" id="hero-title" data-reveal>One accountable lead.</h1>
+      <p class="t-body-l measure" data-reveal style="--d:.08s">The marketing side of business events in West Africa, with one principal on every engagement and a vetted network brought in for each event.</p>
+      <div class="comp about-visual" data-comp>
+        <div class="comp__stage">
+          <div class="av-block" data-pop></div>
+          <div class="av-photo photo" data-pop style="--d:.1s"><img src="assets/img/partners-inhouse.jpg" alt="Event team working together backstage" width="820" height="460" decoding="async" /></div>
+          <div class="av-note-a note" data-pop style="--d:.25s"><p class="t-caption">Based in</p><p class="t-title">Lagos, Nigeria</p></div>
+          <div class="av-note-b note" data-pop style="--d:.35s"><p class="t-caption">Delivered in</p><p class="t-title">Nigeria · Ghana</p></div>
+        </div>
       </div>
     </section>
 
-    <section class="sec" aria-labelledby="principles-title" style="padding-bottom:100px">
-      <h2 class="t-h1 heading-block" id="principles-title" data-rise>Three things we won't trade.</h2>
-      <div class="cols3"><article class="tile" data-fade><p class="t-caption accent">01 · One lead</p><div class="tile__copy"><h3 class="t-h3">The person who scopes your event reports on it.</h3><p class="t-body">No hand-offs between a pitch team and a delivery team.</p></div></article><article class="tile" data-fade><p class="t-caption accent">02 · Show-ups over sign-ups</p><div class="tile__copy"><h3 class="t-h3">We count who walks through the door.</h3><p class="t-body">We plan, and report, against the people who actually arrive.</p></div></article><article class="tile" data-fade><p class="t-caption accent">03 · Only what's on record</p><div class="tile__copy"><h3 class="t-h3">Results you can check.</h3><p class="t-body">Figures are shown only where they are on record.</p></div></article></div>
+    <section class="section bg-white" aria-labelledby="founder-title">
+      <div class="wrap founder">
+        <div class="founder__stamp stamp-shadow" data-reveal><div class="stamp"><img src="assets/img/founder.jpg" alt="Oluwatosin Joshua Adesegun, founder of Angle Zero" width="272" height="352" loading="lazy" decoding="async" /></div></div>
+        <div class="founder__text" data-reveal style="--d:.08s">
+          <p class="t-caption">Founder &amp; Principal</p>
+          <h2 class="t-display-m" id="founder-title">Oluwatosin Joshua Adesegun</h2>
+          <p class="t-body-l">Joshua has spent three years marketing business events for technology, finance and trade audiences in Nigeria and Ghana. His background spans performance marketing, email and brand strategy, and he holds an MBA in Marketing.</p>
+          <p class="t-body-l">He is the accountable lead on every engagement, working with a vetted network of specialists.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="sec crew" aria-labelledby="crew-title">
-      <div class="stack"><p class="t-caption" data-fade>The crew</p><h2 class="t-h2" id="crew-title" data-rise>A specialist for every part of the brief.</h2><p class="t-body-l measure" data-fade>Each event gets the specialists it needs from a vetted network, working to one plan and one lead.</p><ul class="list-block list-block--last" data-list style="margin-top:16px"><li class="t-h4">PR</li><li class="t-h4">Design</li><li class="t-h4">Web development</li><li class="t-h4">Onsite operations</li><li class="t-h4">Analytics</li></ul></div>
-      <div class="ph " data-parallax><img src="assets/img/partners-inhouse.jpg" alt="A small team planning an event around a table" loading="lazy" /></div>
+    <section class="section" aria-labelledby="principles-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal><div class="sec-head__title"><p class="t-caption">How we work</p><h2 class="t-display-l" id="principles-title">Three things we won’t trade.</h2></div></div>
+        <ul class="cards-3">
+          <li class="ccard ccard--roomy bg-lime" data-reveal><p class="t-caption">01 · One lead</p><h3 class="t-heading">The person who scopes your event reports on it.</h3><p class="t-body-l">No hand-offs between a pitch team and a delivery team.</p></li>
+          <li class="ccard ccard--roomy bg-sun" data-reveal style="--d:.08s"><p class="t-caption">02 · Show-ups over sign-ups</p><h3 class="t-heading">We count who walks through the door.</h3><p class="t-body-l">We plan, and report, against the people who actually arrive.</p></li>
+          <li class="ccard ccard--roomy bg-lilac" data-reveal style="--d:.16s"><p class="t-caption">03 · Only what’s on record</p><h3 class="t-heading">Results you can check.</h3><p class="t-body-l">Figures are shown only where they are on record.</p></li>
+        </ul>
+      </div>
     </section>
 
-    <section class="sec bg-card" aria-labelledby="record-title">
-      <div class="countdown__head"><div><p class="t-caption" data-fade>Track record</p><h2 class="t-h1" id="record-title" data-rise>Where the experience comes from.</h2></div><p class="t-body" data-fade>TechCabal and Zikoko projects were delivered within in-house teams; responsibilities listed are our principal's own.</p></div>
-      <article class="record__row" data-fade><p class="t-small accent">2025 – 2026</p><h3 class="t-h3">Loveworld Trade &amp; Investment Forum</h3><p class="t-body">Full marketing ownership</p></article><article class="record__row" data-fade><p class="t-small accent">2024 – 2026</p><h3 class="t-h3">Moonshot by TechCabal</h3><p class="t-body">Registration, email, campaign strategy, partnerships</p></article><article class="record__row" data-fade><p class="t-small accent">2026</p><h3 class="t-h3">Naira Life</h3><p class="t-body">Registration, email, partnerships</p></article><article class="record__row" data-fade><p class="t-small accent">[Year]</p><h3 class="t-h3">Zikoko Citizen Townhall</h3><p class="t-body">Led the marketing team: strategy, registration, communications</p></article>
+    <section class="section bg-white" aria-labelledby="crew-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal><div class="sec-head__title" style="max-width:840px"><p class="t-caption">The crew</p><h2 class="t-display-l" id="crew-title">A specialist for every part of the brief.</h2></div><p class="t-body-l measure-s">Each event gets the specialists it needs from a vetted network, working to one plan and one lead.</p></div>
+        <ul class="crew">
+          <li data-reveal style="--d:0.00s"><span class="tag tag--campaigns">Campaigns</span><p class="t-body-l">PR</p></li><li data-reveal style="--d:0.06s"><span class="tag tag--content">Content</span><p class="t-body-l">Design</p></li><li data-reveal style="--d:0.12s"><span class="tag tag--content">Content</span><p class="t-body-l">Web development</p></li><li data-reveal style="--d:0.18s"><span class="tag tag--registration">Registration</span><p class="t-body-l">Onsite operations</p></li><li data-reveal style="--d:0.24s"><span class="tag tag--registration">Registration</span><p class="t-body-l">Analytics</p></li>
+        </ul>
+      </div>
     </section>
 
-    <section class="sec" aria-labelledby="base-title">
-      <h2 class="t-h1 heading-block" id="base-title" data-rise style="max-width:1500px">Lagos, Nigeria. Working across West Africa.</h2>
-      <dl class="facts facts--3"><div class="fact"><dt class="t-caption">Sectors</dt><dd class="t-h5">Technology · Finance · Trade &amp; investment · Civic</dd></div><div class="fact"><dt class="t-caption">Delivered in</dt><dd class="t-h5">Nigeria · Ghana</dd></div><div class="fact"><dt class="t-caption">Event types</dt><dd class="t-h5">Free, invite-only and paid business events</dd></div></dl>
-    </section>
-
-    <section class="sec cta on-dark" aria-labelledby="cta-title">
-      <p class="t-caption" data-fade>Event marketing · West Africa</p>
-      <h2 class="t-h1" id="cta-title" data-rise>Producing a business event in the next six months?</h2>
-      <p class="t-body-l" data-fade>Send us the brief. We'll come back within two working days with an audience plan and a scope.</p>
-      <div class="btn-row" data-fade>
-        <a class="btn btn--vivid" href="contact.html">Send the brief</a>
-        <a class="btn btn--ghost" href="mailto:hello@anglezero.co">[hello@anglezero.co]</a>
+    <section class="cta bg-ink on-dark" aria-labelledby="cta-title">
+      <div class="cta__stamp cta__stamp--a stamp-shadow" aria-hidden="true"><div class="stamp"><img src="assets/img/ai-round.jpg" alt="" loading="lazy" decoding="async" /></div></div>
+      <div class="cta__stamp cta__stamp--b stamp-shadow" aria-hidden="true"><div class="stamp"><img src="assets/img/ai-net.jpg" alt="" loading="lazy" decoding="async" /></div></div>
+      <div class="wrap cta__inner" data-reveal>
+        <div class="cta__bars" aria-hidden="true"><span class="bg-lime"></span><span class="bg-pink"></span><span class="bg-lilac"></span><span class="bg-sun"></span></div>
+        <h2 class="t-display-xl" id="cta-title">Ready when<br class="br-d" /> your event is.</h2>
+        <p class="t-body-l">Tell us the date, the room and who should be in it.</p>
+        <div class="btn-row btn-row--center">
+          <a class="btn btn--light" href="contact.html">Start a brief</a>
+          <a class="btn btn--secondary" href="events.html">See our work</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer on-dark">
+  <footer class="footer">
     <div class="footer__top">
-      <div class="footer__cols">
-        <div class="footer__col"><p class="t-caption">Explore</p><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="events.html">Events</a><a href="contact.html">Contact</a></div>
-        <div class="footer__col"><p class="t-caption">Base</p><p>Lagos, Nigeria</p><p>Working across West Africa</p></div>
-        <div class="footer__col"><p class="t-caption">Contact</p><a href="mailto:hello@anglezero.co">[hello@anglezero.co]</a><a href="mailto:hello@anglezero.co?subject=Book%20a%20call">Book a call</a></div>
+      <div class="footer__brand">
+        <img src="assets/brand/wordmark.svg" alt="Angle Zero" width="211" height="58" loading="lazy" />
+        <p>Marketing and on-site ticketing for conferences, forums, summits and roundtables.</p>
       </div>
-      <a href="#top" data-top>Back to top ↑</a>
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="Footer">
+          <p class="t-caption">Explore</p>
+          <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="events.html">Events</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer__col">
+          <p class="t-caption">Contact</p>
+          <a href="mailto:hello@anglezero.co">[hello@anglezero.co]</a>
+          <a href="mailto:hello@anglezero.co?subject=Book%20a%20call">Book a call</a>
+        </div>
+      </div>
     </div>
-    <p class="t-small footer__bar quiet">© 2026 Angle Zero · Lagos, Nigeria · Working across West Africa</p>
+    <div class="footer__bottom t-caption">
+      <p>© 2026 Angle Zero</p>
+      <a href="#main" data-top>Back to top <span aria-hidden="true">↑</span></a>
+    </div>
   </footer>
 
-  <script src="assets/vendor/gsap.min.js" defer></script>
-  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="main.js" defer></script>
+  <script src="main.js?v=2" defer></script>
 </body>
 </html>
