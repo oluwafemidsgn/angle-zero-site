@@ -8,12 +8,20 @@
   const toggle = $("[data-menu-toggle]");
   const menu = $("[data-menu]");
   if (toggle && menu) {
+    // The menu opens directly under the header, wherever the header sits
+    // (the announcement bar above it scrolls away, the header is sticky).
+    const placeMenu = () => {
+      const bottom = $("[data-nav]").getBoundingClientRect().bottom;
+      menu.style.setProperty("--menu-top", `${Math.max(0, Math.round(bottom))}px`);
+    };
+    window.addEventListener("resize", () => { if (menu.classList.contains("is-open")) placeMenu(); });
     const setOpen = (open) => {
+      if (open) placeMenu();
+      document.documentElement.classList.toggle("menu-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       menu.classList.toggle("is-open", open);
       menu.inert = !open;
-      document.body.style.overflow = open ? "hidden" : "";
     };
     toggle.addEventListener("click", () => setOpen(toggle.getAttribute("aria-expanded") !== "true"));
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
