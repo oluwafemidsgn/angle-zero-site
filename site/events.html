@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="preload" href="assets/fonts/serrif-condensed-medium.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=13" />
-  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="styles.css?v=14" />
+  <script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("az-pt")==="1"&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("pt-arriving")}catch(e){}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,7 +41,6 @@
   <main id="main">
 
     <section class="wrap hero" aria-labelledby="hero-title">
-      <p class="t-caption">Events · Selected work</p>
       <h1 class="t-display-xl" id="hero-title">Rooms we’ve filled.</h1>
       <div class="hero__row">
         <p class="t-body-l" style="max-width:560px">Each project lists what we were responsible for. Results are shown only where they are on record.</p>
@@ -63,7 +62,6 @@
         </div>
         <div class="feature__body">
           <div class="feature__text">
-            <p class="t-caption">Client · Accra, Ghana · 2025 &amp; 2026</p>
             <h2 class="t-display-m" id="lw-title">Loveworld Trade &amp; Investment Forum</h2>
             <p class="t-body-l">A two-day, free-to-attend forum on enterprise, trade and investment. Full marketing ownership across two editions.</p>
             <a class="link" href="case-study-loveworld.html">Read the case study <span aria-hidden="true">→</span></a>
@@ -79,7 +77,6 @@
       <div class="wrap split">
         <div class="photo"><picture><source type="image/webp" srcset="assets/img/r/moonshot-480.webp 480w, assets/img/r/moonshot-800.webp 800w, assets/img/r/moonshot-1200.webp 1200w, assets/img/r/moonshot-1800.webp 1800w" sizes="(max-width: 1100px) 92vw, 640px" /><img src="assets/img/r/moonshot-1200.jpg" alt="Moonshot by TechCabal conference in Lagos" width="640" height="440" loading="lazy" decoding="async" /></picture></div>
         <div class="split__text">
-          <p class="t-caption">TechCabal · 2024, 2025, 2026</p>
           <h2 class="t-display-m" id="ms-title">Moonshot by TechCabal</h2>
           <p class="t-body-l">Pan-African technology conference in Lagos. Three consecutive editions.</p>
           <ul class="tags" aria-label="Our scope"><li class="tag tag--audience">Audience</li><li class="tag tag--content">Content</li><li class="tag tag--registration">Registration</li></ul>
@@ -97,20 +94,17 @@
         <div class="more-grid">
           <article class="ecard" id="naira-life" data-cat="finance">
             <div class="photo"><picture><source type="image/webp" srcset="assets/img/r/naira-life-480.webp 480w, assets/img/r/naira-life-800.webp 800w, assets/img/r/naira-life-1200.webp 1200w, assets/img/r/naira-life-1800.webp 1800w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 405px" /><img src="assets/img/r/naira-life-1200.jpg" alt="Naira Life event audience" width="405" height="280" loading="lazy" decoding="async" /></picture></div>
-            <p class="t-caption">Zikoko · 2026</p>
             <h3 class="t-heading">Naira Life</h3>
             <p>Zikoko’s personal finance event.</p>
             <ul class="tags" aria-label="Our scope"><li class="tag tag--audience">Audience</li><li class="tag tag--content">Content</li></ul>
           </article>
           <article class="ecard" id="townhall" data-cat="civic">
             <div class="photo"><picture><source type="image/webp" srcset="assets/img/r/townhall-480.webp 480w, assets/img/r/townhall-800.webp 800w, assets/img/r/townhall-1200.webp 1200w, assets/img/r/townhall-1800.webp 1800w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 405px" /><img src="assets/img/r/townhall-1200.jpg" alt="Zikoko Citizen Townhall audience" width="405" height="280" loading="lazy" decoding="async" /></picture></div>
-            <p class="t-caption">Zikoko · Civic · [Year]</p>
             <h3 class="t-heading">Zikoko Citizen Townhall</h3>
             <p>Public town hall connecting citizens with public-interest conversations.</p>
             <ul class="tags" aria-label="Our scope"><li class="tag tag--audience">Audience</li><li class="tag tag--campaigns">Campaigns</li><li class="tag tag--content">Content</li></ul>
           </article>
           <div class="next-card bg-lilac">
-            <p class="t-caption">Next in the list</p>
             <h3 class="t-display-m">Your event could be next.</h3>
             <a class="btn btn--light" href="contact.html">Market your event</a>
           </div>
@@ -165,6 +159,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=7" defer></script>
+  <script src="main.js?v=8" defer></script>
 </body>
 </html>

@@ -378,12 +378,18 @@
     pt.className = "pt"; pt.setAttribute("aria-hidden", "true");
     pt.innerHTML = '<div class="pt__bars"><span class="bg-lime"></span><span class="bg-pink"></span><span class="bg-lilac"></span><span class="bg-sun"></span></div>';
     document.body.append(pt);
-    // Arriving from another page on this site: start covered, then sweep away
-    let arrived = false;
-    try { arrived = sessionStorage.getItem("az-pt") === "1"; sessionStorage.removeItem("az-pt"); } catch {}
-    if (arrived) {
+    // Arriving from another page on this site: the head script already
+    // covered the page before it painted. Swap that for the real cover in the
+    // same frame, then sweep it away, so the cover never drops in between.
+    const root = document.documentElement;
+    try { sessionStorage.removeItem("az-pt"); } catch {}
+    if (root.classList.contains("pt-arriving")) {
       pt.classList.add("is-cover-start");
-      requestAnimationFrame(() => requestAnimationFrame(() => { pt.classList.remove("is-cover-start"); pt.classList.add("is-revealing"); }));
+      root.classList.remove("pt-arriving");
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        pt.classList.remove("is-cover-start");
+        pt.classList.add("is-revealing");
+      }));
     }
     document.addEventListener("click", (e) => {
       const a = e.target.closest("a[href]");
@@ -397,7 +403,12 @@
       setTimeout(() => { location.href = url.href; }, 560);
     });
     // Coming back with the browser's back button: never leave the cover up
-    window.addEventListener("pageshow", (e) => { if (e.persisted) pt.classList.remove("is-covering", "is-cover-start"); });
+    window.addEventListener("pageshow", (e) => {
+      if (!e.persisted) return;
+      root.classList.remove("pt-arriving");
+      pt.classList.remove("is-covering", "is-cover-start");
+      try { sessionStorage.removeItem("az-pt"); } catch {}
+    });
   }
 
   /* ---------- Contact: brief form ---------- */

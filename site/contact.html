@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="preload" href="assets/fonts/serrif-condensed-medium.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=13" />
-  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="styles.css?v=14" />
+  <script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("az-pt")==="1"&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("pt-arriving")}catch(e){}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,7 +41,6 @@
   <main id="main">
 
     <section class="wrap hero" aria-labelledby="hero-title">
-      <p class="t-caption">Contact</p>
       <h1 class="t-display-xl" id="hero-title">Tell us about the room.</h1>
       <p class="t-body-l" style="max-width:620px">Send the brief. We’ll come back within two working days with an audience plan and a scope.</p>
     </section>
@@ -67,7 +66,6 @@
 
         <aside class="talk" aria-labelledby="talk-title">
           <div class="talk__card bg-lilac">
-            <p class="t-caption">Rather talk?</p>
             <h2 class="t-display-m" id="talk-title">Skip the form.</h2>
             <dl>
               <div><dt class="t-caption">Email</dt><dd class="t-body-l"><a href="mailto:hello@anglezero.co">[hello@anglezero.co]</a></dd></div>
@@ -83,7 +81,7 @@
 
     <section class="section bg-white" aria-labelledby="next-title">
       <div class="wrap">
-        <div class="sec-head"><div class="sec-head__title"><p class="t-caption">What happens next</p><h2 class="t-display-l" id="next-title">From brief to countdown.</h2></div></div>
+        <div class="sec-head"><div class="sec-head__title"><h2 class="t-display-l" id="next-title">From brief to countdown.</h2></div></div>
         <ol class="cards-3">
           <li class="ccard ccard--steps bg-lime"><p class="t-display-m">Day 0</p><h3 class="t-heading">You send the brief.</h3><p class="t-body-l">Through the form, by email or on a call.</p></li>
           <li class="ccard ccard--steps bg-lilac"><p class="t-display-m">2 days</p><h3 class="t-heading">Audience plan and scope.</h3><p class="t-body-l">Who to reach, how to reach them and what it will take.</p></li>
@@ -94,7 +92,7 @@
 
     <section class="section" aria-labelledby="faq-title">
       <div class="wrap">
-        <div class="sec-head"><div class="sec-head__title"><p class="t-caption">Questions</p><h2 class="t-display-l" id="faq-title">Before you ask.</h2></div></div>
+        <div class="sec-head"><div class="sec-head__title"><h2 class="t-display-l" id="faq-title">Before you ask.</h2></div></div>
         <div class="faq" data-faq>
           <div class="faq__item is-open">
             <h3 class="t-heading faq__q"><button type="button" aria-expanded="true" aria-controls="faq-0">Do you work under our brand?</button></h3>
@@ -156,6 +154,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=7" defer></script>
+  <script src="main.js?v=8" defer></script>
 </body>
 </html>

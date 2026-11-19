@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="preload" href="assets/fonts/serrif-condensed-medium.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=13" />
-  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="styles.css?v=14" />
+  <script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("az-pt")==="1"&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("pt-arriving")}catch(e){}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -163,11 +163,11 @@
 
     <section class="section bg-white" aria-labelledby="measure-title">
       <div class="wrap">
-        <div class="sec-head"><div class="sec-head__title"><p class="t-caption">Reporting</p><h2 class="t-display-l" id="measure-title">What we measure.</h2></div></div>
+        <div class="sec-head"><div class="sec-head__title"><h2 class="t-display-l" id="measure-title">What we measure.</h2></div></div>
         <ol class="cards-3">
-          <li class="ccard bg-sun"><p class="t-caption">01</p><h3 class="t-heading">Show-up rate.</h3><p class="t-body-l">How many registrants actually walk through the door.</p></li>
-          <li class="ccard bg-lime"><p class="t-caption">02</p><h3 class="t-heading">Audience match.</h3><p class="t-body-l">The share of attendees who fit the profile you agreed with us.</p></li>
-          <li class="ccard bg-pink"><p class="t-caption">03</p><h3 class="t-heading">Cost per qualified attendee.</h3><p class="t-body-l">What it cost to bring each right person into the room.</p></li>
+          <li class="ccard bg-sun"><h3 class="t-heading">Show-up rate.</h3><p class="t-body-l">How many registrants actually walk through the door.</p></li>
+          <li class="ccard bg-lime"><h3 class="t-heading">Audience match.</h3><p class="t-body-l">The share of attendees who fit the profile you agreed with us.</p></li>
+          <li class="ccard bg-pink"><h3 class="t-heading">Cost per qualified attendee.</h3><p class="t-body-l">What it cost to bring each right person into the room.</p></li>
         </ol>
       </div>
     </section>
@@ -211,6 +211,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=7" defer></script>
+  <script src="main.js?v=8" defer></script>
 </body>
 </html>
