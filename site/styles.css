@@ -363,28 +363,19 @@ main { overflow-x: clip; }
 .postmark text { font-family: var(--sans); font-size: 14px; font-weight: 500; }
 
 @media (max-width: 720px) {
-  /* Narrow screens: photo, colour block, stamp and ONE card. The other
-     figures move to the stat row below (.hero-stats). */
-  .home-visual { --w: 600; --h: 560; margin-top: 32px; }
-  .hv-block { left: calc(0 * var(--u)); top: calc(200 * var(--u)); width: calc(600 * var(--u)); height: calc(340 * var(--u)); }
-  .hv-woman { left: calc(150 * var(--u)); top: calc(0 * var(--u)); width: calc(300 * var(--u)); height: calc(390 * var(--u)); }
-  .hv-hall, .hv-postmark, .hv-pill, .hv-proof-a { display: none; }
+  /* Narrow screens: same layered layout as desktop (photo, block, stamp and
+     both cards on the image); the cards just get smaller text. */
+  .home-visual { --w: 600; --h: 540; margin-top: 32px; }
+  .hv-block { left: calc(0 * var(--u)); top: calc(200 * var(--u)); width: calc(600 * var(--u)); height: calc(320 * var(--u)); }
+  .hv-woman { left: calc(150 * var(--u)); top: calc(0 * var(--u)); width: calc(300 * var(--u)); height: calc(380 * var(--u)); }
+  .hv-hall, .hv-postmark, .hv-pill { display: none; }
   .hv-man { left: calc(430 * var(--u)); top: calc(330 * var(--u)); width: calc(140 * var(--u)); height: calc(176 * var(--u)); }
-  .hv-proof-b { left: calc(32 * var(--u)); top: calc(350 * var(--u)); width: calc(250 * var(--u)); }
-  .comp .proof { padding: 10px 12px; gap: 2px; border-radius: 12px; }
-  .comp .proof .t-caption { font-size: var(--body-xs); }
-  .proof__figure { font-size: 24px; }
-  .comp .proof .t-body { font-size: var(--body-s); line-height: 1.35; }
-}
-
-/* Phone-only stat row under the home hero (Jasper-style two-up cards) */
-.hero-stats { display: none; }
-@media (max-width: 720px) {
-  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; padding-bottom: 8px; }
-  .hero-stats .proof { padding: 14px; gap: 4px; border-radius: 12px; align-content: start; }
-  .hero-stats .t-caption { font-size: var(--body-xs); }
-  .hero-stats .proof__figure { font-size: 28px; }
-  .hero-stats .t-body { font-size: var(--body-s); line-height: 1.35; }
+  .hv-proof-a { left: calc(28 * var(--u)); top: calc(320 * var(--u)); width: calc(232 * var(--u)); }
+  .hv-proof-b { left: calc(392 * var(--u)); top: calc(56 * var(--u)); width: calc(180 * var(--u)); }
+  .comp .proof { padding: 8px 10px; gap: 1px; border-radius: 10px; }
+  .comp .proof .t-caption { font-size: 11px; line-height: 1.3; }
+  .comp .proof .proof__figure { font-size: 20px; }
+  .comp .proof .t-body { font-size: 12px; line-height: 1.3; }
 }
 
 /* ---------- Brands strip ---------- */
@@ -675,7 +666,7 @@ main { overflow-x: clip; }
 /* Smallest phones (iPhone SE 1st gen and similar) */
 @media (max-width: 400px) {
   .crew { grid-template-columns: 1fr; }
-  .home-visual { --h: 580; }
+  .home-visual { --h: 560; }
   .why-visual { --h: 740; }
   .svc-visual { --h: 620; }
   .about-visual { --h: 600; }
