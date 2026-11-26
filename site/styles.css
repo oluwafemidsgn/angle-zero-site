@@ -337,7 +337,7 @@ main { overflow-x: clip; }
 .comp__stage > * { position: absolute; }
 .comp .note, .comp .proof { font-size: max(11px, calc(17 * var(--u))); }
 
-.home-visual { --w: 1440; --h: 560; max-width: var(--max); margin-inline: auto; }
+.home-visual { --w: 1440; --h: 500; max-width: var(--max); margin-inline: auto; }
 .hv-block { left: calc(200 * var(--u)); top: calc(200 * var(--u)); width: calc(1040 * var(--u)); height: calc(300 * var(--u)); background: var(--lilac); border-radius: var(--radius); }
 .hv-woman { left: calc(530 * var(--u)); top: calc(30 * var(--u)); width: calc(380 * var(--u)); height: calc(470 * var(--u)); }
 .hv-man { left: calc(1066 * var(--u)); top: calc(290 * var(--u)); width: calc(200 * var(--u)); height: calc(250 * var(--u)); rotate: 5deg; }
@@ -365,7 +365,7 @@ main { overflow-x: clip; }
 @media (max-width: 720px) {
   /* Narrow screens: same layered layout as desktop (photo, block, stamp and
      both cards on the image); the cards just get smaller text. */
-  .home-visual { --w: 600; --h: 540; margin-top: 32px; }
+  .home-visual { --w: 600; --h: 520; margin-top: 32px; }
   .hv-block { left: calc(0 * var(--u)); top: calc(200 * var(--u)); width: calc(600 * var(--u)); height: calc(320 * var(--u)); }
   .hv-woman { left: calc(150 * var(--u)); top: calc(0 * var(--u)); width: calc(300 * var(--u)); height: calc(380 * var(--u)); }
   .hv-hall, .hv-postmark, .hv-pill { display: none; }
@@ -666,7 +666,6 @@ main { overflow-x: clip; }
 /* Smallest phones (iPhone SE 1st gen and similar) */
 @media (max-width: 400px) {
   .crew { grid-template-columns: 1fr; }
-  .home-visual { --h: 560; }
   .why-visual { --h: 740; }
   .svc-visual { --h: 620; }
   .about-visual { --h: 600; }
