@@ -124,6 +124,8 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 .t-display-m  { font-size: var(--display-m);  line-height: 1.05; letter-spacing: -0.03em; }
 .t-heading    { font-size: var(--heading);    line-height: 1.1; letter-spacing: -0.02em; }
 .t-body-l     { font-size: var(--body-l); line-height: 1.4; letter-spacing: -0.01em; }
+/* Intro line under a big headline: smaller than body-l so the headline leads */
+.t-lead       { font-size: clamp(16px, 15px + 0.2vw, 18px); line-height: 1.5; }
 .t-body       { font-size: var(--body); line-height: 1.5; letter-spacing: -0.005em; }
 .t-body-s     { font-size: var(--body-s); line-height: 1.5; letter-spacing: -0.003em; }
 .t-body-xs    { font-size: var(--body-xs); line-height: 1.45; letter-spacing: 0; }
@@ -326,7 +328,7 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 /* Home hero */
 .home-hero { padding-top: 72px; display: grid; justify-items: center; text-align: center; gap: 26px; }
 .home-hero h1 { max-width: 1100px; }
-.home-hero p { max-width: 600px; font-size: clamp(16px, 15px + 0.2vw, 18px); line-height: 1.5; }
+.home-hero p { max-width: 600px; }
 @media (max-width: 720px) { .home-hero { padding-top: 48px; gap: 20px; } }
 
 /* Scaled compositions: children use calc(N * var(--u)) where N is a Figma px value */
